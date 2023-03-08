@@ -1,0 +1,129 @@
+<link rel="stylesheet" href="/stylesheets/navbar.css" />
+<nav class="navbar sticky navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand ms-0" href="#">
+      <h5 class="logo display-6">
+        <img src="/utility/images/chess.png" alt="" id="chesslogo" />
+        Chess
+      </h5>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/">
+            <i class="bi bi-house-door-fill"></i>
+
+            Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blogs/new">
+            <i class="bi bi-plus-square-fill"></i>
+            Post</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blogs" id="read">
+            <i class="bi bi-newspaper"></i>
+            Read</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/invite">
+            <i class="bi bi-controller"></i>
+            Invite</a
+          >
+        </li>
+      </ul>
+      <div class="navbar-nav">
+        <% if(!currentUser){ %>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/login">
+            <i class="bi bi-box-arrow-in-right"></i>
+
+            Log in</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/register">
+            <i class="bi bi-question-circle-fill"></i>
+
+            Sign up</a
+          >
+        </li>
+        <% } else{ %>
+
+        <li class="nav-item">
+          <a class="nav-link ms-0" href="/user/profile/<%=currentUser._id%>">
+            <i class="bi bi-person-circle"></i>
+
+            <%= currentUser.username %></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/logout">
+            <i class="bi bi-box-arrow-right"></i>
+
+            Log out</a
+          >
+        </li>
+        <% } %>
+        <li class="mx-auto">
+          <button class="pushable my-2">
+            <a href="/invite" class="front px-5 py-1">Play </a>
+          </button>
+        </li>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style>
+  a {
+    text-decoration: none;
+  }
+  .pushable {
+    background: #5c7f35;
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+  }
+  .front {
+    display: block;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: #6f9a3f;
+    color: white;
+    transform: translateY(-6px);
+  }
+
+  .pushable:active .front {
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 650px) {
+    .pushable {
+      display: none;
+    }
+  }
+
+  .nav-item:hover {
+    border-radius: 10%;
+    transform: scale(1.1);
+  }
+</style>
+
+<script></script>

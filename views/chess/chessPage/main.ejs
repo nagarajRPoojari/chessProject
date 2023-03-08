@@ -1,0 +1,53 @@
+<% layout('/layout/boilerplate.ejs') %>
+<script>
+  const ROOM_ID = "<%= roomId %>";
+  const timeLimit = "<%= timeLimit %>";
+</script>
+
+
+<script src="/socket.io/socket.io.js" defer></script>
+<script src="app.js" defer></script>
+<script src="chessHandler/chess-logic-functions.js" defer></script>
+<script src="chessHandler/chess-engine.js" defer></script>
+<script src="chessHandler/chess-socket.js" defer></script>
+<link rel="stylesheet" href="chessHandler/chessBoard.css" defer />
+<link rel="stylesheet" href="chatHandler/chat.css" />
+<script src="chatHandler/chat.js" defer></script>
+<title>Chess</title>
+
+<div class="row">
+  <div
+    class="board-body d-flex"
+    "
+  >
+    <div class="cboard card col-md-7">
+      <div class="user1 card rounded-end text-white card my-2 px-1 py-1">
+        <h3 class="" id="tog">White's Turn</h3>
+      </div>
+
+      <%- include('./users/user1.ejs') %> <%- include('./chessboard.ejs') %>
+      <%-include('./users/user2.ejs') %>
+    </div>
+
+    <div class="option-window rounded-end col-md-4">
+      <div id="video-grid" class="video-box rounded-end"></div>
+      <div id="chat-grid" class="chat-box">
+        <div class="message_area"></div>
+        <div id="textbar" class="">
+          <input
+            type="text"
+            name=""
+            id="textarea"
+            placeholder="write a message"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('./popUpModals/conclusion.ejs') %>
+<script>
+  const currentUserName = "<%= currentUser.username %>";
+  const currentUserID = "<%= currentUser._id %>";
+  const currentUserSkill = "<%= currentUser.skill %>";
+</script>

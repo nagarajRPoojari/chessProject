@@ -1,0 +1,53 @@
+<% layout('./layout/boilerplate.ejs') %>
+<link rel="stylesheet" href="/stylesheets/profile.css" />
+<div class="row my-5 mx-2">
+  <div class="col-md-8 offset-sm-3 card my-3 py-3 text-white outside-box">
+    <img
+      src="https://www.chess.com/bundles/web/images/user-image.svg"
+      alt=""
+      id="profile-img"
+    />
+
+    <div class="username px-3">
+      <h1 class="h1"><%= user.username %></h1>
+      <small class="muted"><%= user.skill%></small>
+    </div>
+  </div>
+  <div class="col-md-8 offset-md-3 card my-1 py-3 text-white outside-box">
+    <div class="email mx-3">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-envelope"
+        viewBox="0 0 16 16"
+        id="profile-svg"
+      >
+        <path
+          d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"
+        />
+      </svg>
+    </div>
+
+    <div class="username px-3 py-1">
+      <h5><%= user.email %></h5>
+    </div>
+  </div>
+</div>
+
+<style>
+  .freind {
+    width: 6em;
+    height: 7em;
+    margin-right: 3px;
+  }
+  .friends {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    background: none;
+  }
+</style>

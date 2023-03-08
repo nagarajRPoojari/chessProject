@@ -1,0 +1,100 @@
+<div
+  id="carouselExampleInterval"
+  class="carousel slide box"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="100">
+      <img
+        src="/utility/images/chess-illustration1-removebg-preview.png"
+        class="d-block w-100"
+        alt="..."
+      />
+      <h1 class="display-5 text-white text-center">Play</h1>
+    </div>
+    <div class="carousel-item" data-bs-interval="`100">
+      <img
+        src="/utility/images/chess-illustration1-removebg-preview.png"
+        class="d-block w-100"
+        alt="..."
+      />
+      <h1 class="display-5 text-white text-center">Play</h1>
+    </div>
+    <div class="carousel-item" data-bs-interval="`100">
+      <img
+        src="/utility/images/chess-illustration1-removebg-preview.png"
+        class="d-block w-100"
+        alt="..."
+      />
+      <h1 class="display-5 text-white text-center">Play</h1>
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleInterval"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleInterval"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<script>
+  const popup = document.querySelector(".popup");
+  const close = document.querySelector(".close");
+  const background = document.querySelector(".back");
+  window.addEventListener("load", function () {
+    showPopup();
+  });
+
+  function showPopup() {
+    const timeLimit = 1; // seconds;
+    let i = 0;
+    const timer = setInterval(function () {
+      i++;
+      if (i == timeLimit) {
+        clearInterval(timer);
+        popup.classList.add("show");
+        background.classList.add("blur");
+      }
+      console.log(i);
+    }, 1000);
+  }
+
+  close.addEventListener("click", function () {
+    popup.classList.remove("show");
+    background.classList.remove("blur");
+  });
+</script>
+
+<style>
+  .popup .box {
+    background-color: rgb(39, 37, 34);
+    width: 300px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap;
+    opacity: 0;
+    margin-left: 50px;
+    transition: all 1s ease;
+  }
+  .popup.show .box {
+    opacity: 1;
+    margin-left: 0;
+  }
+  .blur {
+    filter: blur(7px);
+  }
+</style>

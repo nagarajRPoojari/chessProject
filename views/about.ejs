@@ -1,0 +1,88 @@
+<% layout('./layout/boilerplate.ejs') %>
+<script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+<style>
+  .card {
+    background-color: #252320;
+  }
+  h2,
+  h1,
+  h3 {
+    text-align: center;
+  }
+  .name {
+    display: inline-block;
+  }
+  .about {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .tech {
+    margin: 1rem 0em 1rem 0em;
+  }
+</style>
+
+<div class="row my-5 mx-2 about-box">
+  <div class="col-md-8 offset-sm-3 card my-3 py-3 text-white outside-box">
+    <div class="px-3">
+      <h1 class="">About me</h1>
+    </div>
+  </div>
+  <div class="col-md-8 offset-md-3 card my-1 py-3 text-white outside-box">
+    <div class="mx-3 about">
+      <lord-icon
+        src="https://cdn.lordicon.com/bhfjfgqz.json"
+        trigger="hover"
+        colors="primary:#ffffff"
+        style="width: 6em; height: 6em"
+      >
+      </lord-icon>
+      <div class="name ms-1">
+        <h2>nagaraj poojari</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8 offset-md-3 card my-1 py-3 text-white outside-box">
+    <p class="text-center">
+      <small class="text-faded"
+        >This website initially had the feature of live video streaming while
+        playing that uses a popular js library called Peer.js . because of some
+        unexpected issues with Peer.js library that feature is currently
+        removed.</small
+      >
+    </p>
+    <div class="mx-3 about tech-stack">
+      <div class="tech mx-1">
+        <img src="utility/images/nodejs.png" alt="" />
+        nodejs
+      </div>
+      <div class="tech mx-1">
+        <img src="utility/images/express.png" alt="" />
+        express
+      </div>
+      <div class="tech mx-1">
+        <img src="utility/images/mongodb.png" alt="" />
+        mongodb
+      </div>
+      <div class="tech mx-1">
+        <img src="utility/images/socketio.svg" alt="" style="width: 3em" />
+        socket
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .about-box {
+    opacity: 0.85;
+  }
+
+  .text-faded {
+    opacity: 0.5;
+  }
+  .tech-stack {
+    opacity: 0.7s;
+  }
+</style>

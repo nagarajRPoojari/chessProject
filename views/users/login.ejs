@@ -1,0 +1,54 @@
+<% layout('./layout/boilerplate.ejs') %>
+<style>
+  .a {
+    text-decoration: none;
+    color: white;
+  }
+  .card {
+    background-color: rgb(39, 37, 34);
+  }
+  .row {
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+</style>
+<div class="row my-5 mx-2">
+  <div class="col-md-6 offset-md-4 card my-3 px-5 py-3 text-white">
+    <h2>
+      <a href="/user/login" class="a">Login</a> |
+      <a href="/user/register" class="a">Register</a>
+    </h2>
+    <form
+      action="/user/login "
+      method="post"
+      novalidate
+      class="needs-validation"
+    >
+      <div class="mb-3">
+        <label for="username" class="form-label">User name</label>
+        <input
+          type="text"
+          class="form-control bg-dark text-white"
+          id="Email1"
+          aria-describedby="usernamme"
+          required
+          name="username"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control bg-dark text-white"
+          id="Password"
+          name="password"
+          required
+        />
+      </div>
+      <div class="my-3">
+        <button type="submit" class="btn btn-secondary">Log in</button>
+      </div>
+    </form>
+  </div>
+</div>

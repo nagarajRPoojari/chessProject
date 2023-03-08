@@ -1,0 +1,62 @@
+.message_area {
+  min-width: 0px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  height: 1000px;
+  padding: 10px;
+}
+#textarea {
+  width: 100%;
+  border: none;
+  padding: 20px;
+  font-size: 16px;
+  outline: none;
+  overflow: hidden;
+  color: gray;
+}
+
+#send {
+  align-self: center;
+  margin-top: 0%;
+  width: 49px;
+  height: 43px;
+  padding: 0px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30%;
+}
+.message {
+  margin-top: 5px;
+  padding: 6px;
+  border-radius: 1px;
+  margin-bottom: 10px;
+  min-width: 100px;
+  position: relative;
+}
+.incoming {
+  margin-right: auto;
+}
+.outgoing {
+  margin-left: auto;
+}
+p {
+  position: relative;
+  max-width: 30em;
+  font-weight: lighter;
+  background-color: rgb(49, 46, 43);
+  color: white;
+  padding: 2% 1em;
+  font-size: 1em;
+  border-radius: 1rem;
+}
+
+.message h4 {
+  position: absolute;
+  top: -20px;
+  left: 5px;
+  font-size: 14px;
+}
+.message p {
+  margin-bottom: 0px;
+}

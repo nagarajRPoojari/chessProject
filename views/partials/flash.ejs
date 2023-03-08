@@ -1,0 +1,25 @@
+<% if(success && success.length!=0){ %>
+
+<div
+  class="alert alert-secondary alert-dismissible fade show my-2"
+  role="alert"
+>
+  <strong>Well done !</strong> <%= success %>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+<% } %> <% if(error && error.length!=0){ %>
+<div class="alert alert-dark alert-dismissible fade show my-2" role="alert">
+  <strong>Oops! </strong> <%= error %>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+<% } %>

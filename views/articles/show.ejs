@@ -1,0 +1,106 @@
+<% layout('./layout/boilerplate.ejs') %>
+<style>
+  .card {
+    background-color: rgb(39, 37, 34);
+  }
+  a {
+    text-decoration: none;
+  }
+</style>
+<div class="row my-5 mx-1">
+  <div class="card my-3 col-md-6 text-white pt-2">
+    <img
+      style="height: 359px"
+      src="<%=post.image%>"
+      class="card-img-top"
+      alt="..."
+    />
+    <div class="card-body">
+      <div class="px-0 my-2">
+        <h6 class="text-white d-inline me-2">
+          <i class="bi bi-person-circle"></i>
+          <a href="/user/profile/<%=post.author._id%>"
+            ><%= post.author.username %></a
+          >
+        </h6>
+        <i class="bi bi-calendar-date-fill"></i>
+
+        <small class="px-2 text-secondary"><%= post.date %></small>
+      </div>
+      <h5 class="card-title"><%= post.title%></h5>
+      <div><small>likes : <%= post.likes %></small></div>
+      <p class="card-text" style="color: rgb(223, 223, 222)">
+        <%= post.description%>
+      </p>
+      <% if(currentUser && currentUser._id.equals(post.author._id)){ %>
+      <a href="/blogs/<%=post._id%>/edit" class="btn btn-primary my-4">
+        <i class="bi bi-pen-fill"></i>
+
+        Edit</a
+      >
+      <form
+        action="/blogs/<%= post._id %>?_method=DELETE"
+        method="POST"
+        class="d-inline"
+      >
+        <button type="submit" class="btn btn-danger">
+          <i class="bi bi-trash3-fill"></i>
+
+          delete
+        </button>
+      </form>
+      <% } %>
+    </div>
+  </div>
+  <div class="col-md-6 my-3">
+    <div class="card text-white">
+      <div class="card-body">
+        <h2>Leave Comment</h2>
+        <form
+          action="/blogs/<%= post._id %>/comments"
+          method="post"
+          novalidate
+          class="needs-validation"
+        >
+          <div class="mb-3">
+            <label for="body" class="form-label">Comment</label>
+            <textarea
+              name="body"
+              id="body"
+              cols="40"
+              class="form-control border border-secondary text-white"
+              required
+              style="background-color: rgb(64, 69, 72)"
+            ></textarea>
+          </div>
+          <button class="btn btn-success">submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="text-white">
+      <% for(let comment of post.comments){ %>
+      <div class="card my-1">
+        <h6 class="card-subtitle card-body">
+          <i class="bi bi-person-circle"></i>
+          <%= comment.author.username %>
+        </h6>
+
+        <small class="card-body" style="color: rgb(223, 223, 222)"
+          ><%= comment.body %></small
+        >
+        <% if(currentUser && currentUser._id.equals(comment.author._id)){ %>
+        <form
+          action="/blogs/<%=post._id%>/comments/<%=comment._id%>?_method=DELETE"
+          method="post"
+          class="px-3 py-2"
+        >
+          <button type="submit" class="btn btn-danger">
+            <i class="bi bi-trash3-fill"></i>
+          </button>
+        </form>
+        <% } %>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+<% layout('./layout/boilerplate.ejs') %>
+<script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+<style>
+  .card {
+    background-color: #252320;
+  }
+  h2,
+  h1,
+  h3 {
+    text-align: center;
+  }
+  .name {
+    display: inline-block;
+  }
+  .about {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .tech {
+    margin: 1rem 0em 1rem 0em;
+  }
+</style>
+
+<div class="row my-5 mx-2 about-box">
+  <div class="col-md-8 offset-sm-3 card my-3 py-3 text-white outside-box">
+    <div class="px-3">
+      <h1 class="">Contact me</h1>
+    </div>
+  </div>
+  <div class="col-md-8 offset-md-3 card my-1 py-3 text-white outside-box">
+    <form
+      action="mailto:nagarajpoojari2003@gmail.com"
+      class="mx-4"
+      enctype="text/plain"
+      method="post"
+    >
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          class="form-control bg-dark text-white"
+          id="name"
+          name="mail"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="suggestion1" class="form-label">suggestion</label>
+        <textarea
+          type="suggestion"
+          class="form-control bg-dark text-white"
+          id="suggestion1"
+          rows="5"
+          name="comment"
+        ></textarea>
+      </div>
+      <button type="submit" value="Send" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+
+<style>
+  .about-box {
+    opacity: 0.85;
+  }
+
+  .text-faded {
+    opacity: 0.5;
+  }
+  .tech-stack {
+    opacity: 0.7s;
+  }
+</style>

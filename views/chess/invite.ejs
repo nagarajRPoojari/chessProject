@@ -1,0 +1,153 @@
+<% layout('./layout/boilerplate.ejs') %>
+
+<script>
+  let time = "10";
+</script>
+
+<style>
+  .card {
+    background-color: rgb(39, 37, 34);
+  }
+  .row {
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+  a {
+    text-decoration: none;
+  }
+
+  .user1img {
+    width: 30%;
+    border-radius: 2%;
+  }
+  .imageWrapper {
+    margin: 4%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+</style>
+<div class="row my-5 mx-2">
+  <div class="col-md-5 card offset-md-4 card my-3 px-5 py-3 text-white">
+    <h2 class="text-white">Invite your freind</h2>
+    <div class="imageWrapper">
+      <img
+        src="https://www.chess.com/bundles/web/images/user-image.svg"
+        alt=""
+        class="user1img"
+        id="profile-img"
+      />
+      <h2 class="d-inline">v/s</h2>
+      <img
+        src="https://www.chess.com/bundles/web/images/user-image.svg"
+        alt=""
+        class="user1img"
+        id="profile-img"
+      />
+    </div>
+    <div class="text-center">set time</div>
+    <form action="/<%=id%>" method="post">
+      <div class="imageWrapper">
+        <input
+          type="radio"
+          class="btn-check"
+          name="time"
+          id="option1"
+          autocomplete="off"
+          value="10"
+          checked
+        />
+
+        <label class="btn radiobtn px-md-2" for="option1">
+          <i class="bi bi-lightning text-white"></i>
+          <div><small class="text-white">10min</small></div></label
+        >
+
+        <h4 class="text-white text-center"><i class="bi bi-alarm"></i></h4>
+        <input
+          type="radio"
+          class="btn-check"
+          name="time"
+          id="option2"
+          autocomplete="off"
+          value="30"
+        />
+
+        <label class="btn radiobtn px-md-2" for="option2">
+          <i class="bi bi-lightning text-white"></i>
+          <div><small class="text-white">30min</small></div></label
+        >
+      </div>
+      <div class="mb-3 mt-4">
+        <input
+          type="text "
+          value="<%=id%>"
+          id="myInput"
+          class="form-control bg-dark text-white d-inline"
+          style="width: 96%; padding-right: 50px"
+        />
+        <button
+          onclick="myFunction()"
+          class="mt-3 btn btn -secondary text-white p-0 mb-4"
+          type="button"
+        >
+          <i
+            class="bi bi-clipboard"
+            id="clipboard"
+            style="font-size: 150%; margin-left: -50px"
+          ></i>
+        </button>
+        <button
+          class="mt-3 btn btn -secondary text-success bg-success text-white"
+          type="button"
+        >
+          <a
+            href="whatsapp://send?text=<%=id%>"
+            data-action="share/whatsapp/share"
+          >
+            <i class="bi bi-whatsapp text-white"></i
+          ></a>
+        </button>
+        <button
+          class="mt-3 btn btn -secondary text-success bg-primary text-white"
+          type="button"
+        >
+          <a
+            href="https://telegram.me/share/url?url=<%=id%>&text=chess challenge"
+            data-action="share/etlegram/share"
+          >
+            <i class="bi bi-telegram text-white"></i
+          ></a>
+        </button>
+        <small class="ms-auto" style="justify-self: flex-end">
+          <button
+            class="mx-3 mt-3 btn btn -secondary text-white border border-secondary py-1.1 join"
+            type="submit"
+          >
+            Join
+          </button>
+        </small>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  function myFunction() {
+    // Get the text field
+
+    var copyText = document.getElementById("myInput");
+
+    // Select the text field
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText.value);
+    document.getElementById("clipboard").classList.remove("bi-clipboard");
+    document.getElementById("clipboard").classList.add("bi-clipboard-check");
+    // Alert the copied text
+  }
+</script>

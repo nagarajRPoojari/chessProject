@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta user-scalable="no" />
+    <link
+      rel="stylesheet"
+      href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <title>Document</title>
+  </head>
+  <style>
+    @media screen and (min-width: 992px) {
+      .container-fluid {
+        width: 65%;
+      }
+    }
+    .main-body {
+      background-color: rgb(49, 46, 43);
+      background-attachment: fixed;
+    }
+  </style>
+
+  <body class="d-flex flex-column main-body">
+    <div class="spinner-wrapper" id="spinner-wrapper">
+      <div class="spinner-border text-success" id="loader" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    <div class="dad-box row-lg">
+      <div class="col-lg-3"><%- include('../partials/navbar.ejs') %></div>
+      <div class="container-fluid col-lg-6">
+        <%- include('../partials/flash.ejs') %> <%- body %>
+      </div>
+    </div>
+  </body>
+  <%- include('../partials/footer.ejs') %>
+  <script src="/javascripts/validateForms.js"></script>
+</html>
+
+<style>
+  .spinner-wrapper {
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #loader {
+    height: 4em;
+    width: 4em;
+  }
+</style>
+
+<script>
+  window.addEventListener("load", (e) => {
+    document.getElementById("spinner-wrapper").style.opacity = 0;
+    setTimeout(() => {
+      document.getElementById("spinner-wrapper").style.display = "none";
+    }, 1000);
+  });
+</script>

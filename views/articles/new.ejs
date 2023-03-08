@@ -1,0 +1,52 @@
+<% layout('./layout/boilerplate.ejs') %>
+<style>
+  .card {
+    background-color: rgb(39, 37, 34);
+  }
+</style>
+
+<div class="row my-5 mx-2">
+  <div class="col-md-8 offset-md-3 card my-3 px-sm-5 py-3 text-white">
+    <h2 class="text-white">Post something</h2>
+    <form action="/blogs/new" method="POST" novalidate class="needs-validation">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control bg-dark text-white"
+          id="floatingInput"
+          name="title"
+          id="title"
+          required
+        />
+        <label for="floatingInput">Title</label>
+      </div>
+
+      <div class="form-floating">
+        <textarea
+          class="form-control bg-dark text-white"
+          placeholder="Leave a comment here"
+          id="floatingTextarea"
+          style="height: 100px"
+          name="description"
+          required
+        ></textarea>
+        <label for="floatingTextarea2">Description</label>
+      </div>
+
+      <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input
+          type="text"
+          class="form-control bg-dark"
+          id="image"
+          placeholder="enter url"
+          name="image"
+        />
+      </div>
+
+      <div class="my-1">
+        <button type="submit" class="btn btn-secondary">submit</button>
+      </div>
+    </form>
+  </div>
+</div>

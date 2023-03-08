@@ -1,0 +1,26 @@
+.card {
+  background-color: rgb(39, 37, 34);
+}
+.outside-box {
+  display: flex;
+  flex-direction: row;
+}
+#profile-img {
+  width: 5em;
+  height: 5em;
+  border-radius: 7%;
+  transition: transform 0.7s ease-in-out;
+}
+
+#profile-img :hover {
+  transform: rotateY(360deg);
+}
+.username {
+  width: fit-content;
+  margin-top: auto;
+  margin-left: 1em;
+}
+#profile-svg {
+  width: 3em;
+  height: 3em;
+}

@@ -1,0 +1,193 @@
+#first-box {
+  width: 300px;
+}
+
+h1 {
+  margin: 10px;
+}
+
+.divv {
+  display: flex;
+  width: fit-content;
+  border-radius: 70px;
+  border-width: 2px;
+}
+
+.box {
+  list-style: none;
+  display: grid;
+  place-items: center;
+  font-size: 0px;
+  margin: 0px;
+  width: 75px;
+  height: 75px;
+  transition: 0.8 all;
+}
+
+.box :active {
+  transform: scale(2) translate(5px, 7px);
+}
+.box:hover {
+  border: 4px solid rgba(223, 232, 214, 0.5);
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+.allimg {
+  width: 45px;
+  position: relative;
+  bottom: 5px;
+
+  transform: scale(1.5);
+}
+
+.allpawn {
+  transform: scale(1.5);
+}
+
+@media (max-width: 650px) {
+  .box {
+    width: 11vw;
+    height: 11vw;
+  }
+  .board-body {
+    flex-wrap: wrap;
+  }
+
+  .allimg {
+    width: 7vw;
+  }
+  .option-window {
+    width: 90vw;
+  }
+  * {
+    font-size: 15px;
+  }
+}
+.cboard {
+  width: fit-content;
+  transform: scale(0.85);
+}
+
+@media (max-width: 500px) {
+  .cboard {
+    width: fit-content;
+    margin-left: 0px;
+    margin-right: 0px;
+    transform: scale(1);
+  }
+}
+
+.chessboard {
+  margin: 0px;
+  padding: 0px;
+}
+
+.side-window {
+  display: flex;
+  flex-direction: column;
+}
+
+.board-body {
+  position: relative;
+  justify-content: center;
+}
+
+.option-window {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 2%;
+  position: sticky;
+  top: 34px;
+}
+
+.chat-box {
+  background-color: rgb(27, 25, 25);
+  border-radius: 2%;
+  border-radius: 2%;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.video-box {
+  margin-bottom: 5%;
+  border-radius: 2%;
+  background-color: rgb(27, 25, 25);
+  align-self: center;
+  width: 90%;
+  padding: 2%;
+}
+.chessBoard {
+  margin: 2% 0px 2% 0px;
+}
+
+.card {
+  background-color: rgb(49, 46, 43);
+}
+
+.user1,
+.user2 {
+  background-color: rgb(27, 25, 25);
+}
+
+.info-box {
+  display: inline-block;
+  margin: auto;
+  width: 79%;
+  margin-top: 5%;
+  background-color: rgb(27, 25, 25);
+  border-radius: 3%;
+}
+
+ul {
+  border-radius: 1%;
+  overflow: hidden;
+}
+
+#video-grid {
+  width: 90%;
+  display: grid;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#tog {
+  color: white;
+}
+.dp {
+  margin-right: 4px;
+  border-radius: 7px;
+  width: 2em;
+  height: 2em;
+}
+
+.playerdetails {
+  display: inline-block;
+  width: fit-content;
+}
+
+.user1,
+.user2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.timer1,
+.timer2 {
+  justify-self: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.badge {
+  font-size: smaller;
+}
