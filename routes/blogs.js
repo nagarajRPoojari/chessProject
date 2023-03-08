@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const catchAsync = require("../utills/catchAsync");
 const ExpressError = require("../utills/ExpressError");
-const Blog = require("../models/BlogPost");
+const Blog = require("../models/blogpost");
 const { BlogSchema } = require("../Schemas");
 const { isLoggedin, isAuthor } = require("../middleware");
 
