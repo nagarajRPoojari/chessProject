@@ -1,4 +1,4 @@
-const Blog = require("./models/BlogPost");
+const Blog = require("./models/blogpost");
 
 module.exports.isLoggedin = (req, res, next) => {
   if (!req.isAuthenticated()) {
