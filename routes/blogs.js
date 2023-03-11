@@ -36,6 +36,7 @@ router.post(
     const post = await new Blog(req.body).save();
     post.author = req.user._id;
     post.date = new Date().toDateString();
+    post.save();
     req.flash("success", "Successfully posted an article");
     res.redirect("/blogs");
   })
@@ -79,6 +80,7 @@ router.get(
         },
       })
       .populate("author");
+    console.log(post);
     if (!post) {
       req.flash("error", "Article not found");
       res.redirect("/blogs");

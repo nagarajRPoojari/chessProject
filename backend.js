@@ -33,7 +33,7 @@ mongoose.set("strictQuery", false);
 
 const MongoStore = require("connect-mongo")(session);
 
-const dbUrl = process.env.MONGODB_URI || "mongodb://localhost:27017/blogdb";
+const dbUrl = "mongodb://localhost:27017/blogdb";
 //"mongodb://localhost:27017/blogdb"
 //process.env.DB_URL
 mongoose
