@@ -500,9 +500,9 @@ function matchWonOrNot() {
     }
   });
   if (numOfKings == 1) {
-    let winner = "B";
-    if (tog % 2 == 0) {
-      winner = "w";
+    let winner = "W";
+    if (tog % 2 != 0) {
+      winner = "B";
       //location.reload();
     }
     if (mySide == winner) conclude(true);

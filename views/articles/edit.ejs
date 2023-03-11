@@ -17,10 +17,11 @@
       <div class="form-floating mb-3">
         <input
           type="text"
-          class="form-control text-white"
+          class="form-control text-white bg-dark"
           id="floatingInput"
           name="title"
           id="title"
+          value="<%=post.title%>"
           required
         />
         <label for="floatingInput">Title</label>
@@ -28,11 +29,12 @@
 
       <div class="form-floating">
         <textarea
-          class="form-control text-white"
+          class="form-control text-white bg-dark"
           placeholder="Leave a comment here"
           id="floatingTextarea"
           style="height: 100px"
           name="description"
+          aria-valuetext="<%=post.description%>"
           required
         ></textarea>
         <label for="floatingTextarea2">Description</label>
@@ -42,10 +44,11 @@
         <label for="image" class="form-label">Image</label>
         <input
           type="text"
-          class="form-control"
+          class="form-control text-white bg-dark"
           id="image"
           placeholder="enter url"
           name="image"
+          value="<%=post.image%>"
         />
       </div>
 
