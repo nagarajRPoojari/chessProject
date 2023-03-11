@@ -28,7 +28,6 @@
         <small class="px-2 text-secondary"><%= post.date %></small>
       </div>
       <h5 class="card-title"><%= post.title%></h5>
-      <div><small>likes : <%= post.likes %></small></div>
       <p class="card-text" style="color: rgb(223, 223, 222)">
         <%= post.description%>
       </p>
@@ -80,25 +79,25 @@
     <div class="text-white">
       <% for(let comment of post.comments){ %>
       <div class="card my-1">
-        <h6 class="card-subtitle card-body">
-          <i class="bi bi-person-circle"></i>
-          <%= comment.author.username %>
+        <h6 class="card-subtitle card-body d-flex pb-0">
+          <i class="bi bi-person-circle pe-1"></i>
+          <%= comment.author.username %> <% if(currentUser &&
+          currentUser._id.equals(comment.author._id)){ %>
+          <form
+            action="/blogs/<%=post._id%>/comments/<%=comment._id%>?_method=DELETE"
+            method="post"
+            class="ms-auto"
+          >
+            <button type="submit" class="btn text-white p-0">
+              <i class="bi bi-trash-fill"></i>
+            </button>
+          </form>
+          <% } %>
         </h6>
 
         <small class="card-body" style="color: rgb(223, 223, 222)"
           ><%= comment.body %></small
         >
-        <% if(currentUser && currentUser._id.equals(comment.author._id)){ %>
-        <form
-          action="/blogs/<%=post._id%>/comments/<%=comment._id%>?_method=DELETE"
-          method="post"
-          class="px-3 py-2"
-        >
-          <button type="submit" class="btn btn-danger">
-            <i class="bi bi-trash3-fill"></i>
-          </button>
-        </form>
-        <% } %>
       </div>
       <% } %>
     </div>

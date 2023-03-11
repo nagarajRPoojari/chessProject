@@ -80,7 +80,6 @@ router.get(
         },
       })
       .populate("author");
-    console.log(post);
     if (!post) {
       req.flash("error", "Article not found");
       res.redirect("/blogs");
@@ -104,13 +103,11 @@ router.get(
   "/:id/complement?",
   catchAsync(async (req, res) => {
     const post = await Blog.findById(req.params.id);
-    console.log(req.query);
     var likes = post.likes || 0;
     if (req.query == "like") {
       likes++;
     } else likes--;
     await Blog.findByIdAndUpdate(req.params.id, { likes: likes });
-    console.log(post.likes);
     res.redirect(`/blogs/${req.params.id}`);
   })
 );
